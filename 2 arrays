@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main()
+{
+int n,i,m1a,m1b;
+long a,b,sum_a,sum_b;
+scanf("%d",&n);
+    m1a=m1b=sum_a=sum_b=0;
+for (i=0;i<n;i++)
+{
+scanf("%ld",&a);
+        if (a+1) sum_a+=a;
+        else m1a++;
+}
+    for (i=0;i<n;i++)
+{
+scanf("%ld",&b);
+if (b+1) sum_b+=b;
+        else m1b++;
+}
+    if (m1a == 0 && m1b == 1)
+    {
+        if (sum_a > sum_b) printf("1\n");
+        else printf("0\n");
+    }
+    else if (m1a == 1 && m1b == 0)
+    {
+        if (sum_b > sum_a) printf("1\n");
+        else printf("0\n");
+    }
+    else if (m1a == 0 && m1b == 2)
+    {
+        if(sum_a>=sum_b) printf("%d",abs(sum_a-sum_b)+1);
+   else printf("0\n");
+    }
+    else if (m1a == 2 && m1b == 0)
+    {
+        if(sum_b>=sum_a) printf("%d",abs(sum_a-sum_b)+1);
+   else printf("0\n");
+    }
+    else printf("Infinite");
+    return 0;
+}
